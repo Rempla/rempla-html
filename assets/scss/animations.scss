@@ -1,0 +1,8 @@
+@keyframes chatGlowPulse {
+    0%, 100% { box-shadow: 0 0 16px rgba(201,169,110,0.15), 0 0 4px rgba(201,169,110,0.1); }
+    50% { box-shadow: 0 0 24px rgba(201,169,110,0.25), 0 0 8px rgba(201,169,110,0.15); }
+}
+@keyframes avatarBreathe {
+    0%, 100% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+}

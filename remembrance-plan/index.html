@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>My Remembrance Plan</title>
     <link rel="stylesheet" href="../assets/css/main.css" />
 </head>
 <body>
     <div class="container">
         <header>
-            <ul><li><a href="index.html" class="the-logo">Rempla</a></li><li class="breadcrumb">My Dashboard</li></ul>
+            <ul><li><a href="index.html" class="the-logo">Rempla</a></li><li class="breadcrumb">My Remembrance Plan</li></ul>
             <ul>
                 <li class="dash-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><input type="text" placeholder="Search gifts, people, docs..."></li>
                 <li><a href="#" class="dash-back"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"></path></svg> Back to Site</a></li>
@@ -49,7 +49,7 @@
             <aside>
                 <div class="sidebar-section">
                     <div class="sidebar-section-label">Main</div>
-                    <div class="sidebar-link active" id="sl-overview" onclick="setDashLink('/dashboard/')">
+                    <div class="sidebar-link" id="sl-overview" onclick="setDashLink('#')">
                         <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg>
                         Dashboard
                     </div>
@@ -57,7 +57,7 @@
                         <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"></path></svg>
                         My Planning Tree
                     </div>
-                    <div class="sidebar-link" id="sl-plans" onclick="setDashLink('/remembrance-plan/')">
+                    <div class="sidebar-link active" id="sl-plans" onclick="setDashLink('/remembrance-plan/')">
                         <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
                         My Remembrance Plan
                     </div>
@@ -94,11 +94,10 @@
                 </div>
             </aside>
             <main class="dash-main">
-                Dashboard
+                My Remembrance Plan
             </main>
         </div>
     </div>
-
     <script>
         function setDashLink(link) {
             var linkDash = link;

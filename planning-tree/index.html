@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>My PLanning Tree</title>
     <link rel="stylesheet" href="../assets/css/main.css" />
 </head>
 <body>
@@ -49,38 +49,38 @@
             <aside>
                 <div class="sidebar-section">
                     <div class="sidebar-section-label">Main</div>
-                    <div class="sidebar-link" id="sl-overview" onclick="setDashTab('overview')">
+                    <div class="sidebar-link" id="sl-overview" onclick="setDashLink('#')">
                         <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg>
                         Dashboard
                     </div>
-                    <div class="sidebar-link active" id="sl-family" onclick="setDashTab('family')">
+                    <div class="sidebar-link active" id="sl-family" onclick="setDashLink('/planning-tree/')">
                         <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"></path></svg>
                         My Planning Tree
                     </div>
-                    <div class="sidebar-link" id="sl-plans" onclick="setDashTab('plans')">
+                    <div class="sidebar-link" id="sl-plans" onclick="setDashLink('/remembrance-plan/')">
                         <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
                         My Remembrance Plan
                     </div>
-                    <div class="sidebar-link" id="sl-vault" onclick="setDashTab('vault')">
+                    <div class="sidebar-link" id="sl-vault" onclick="setDashTab('#')">
                         <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="1"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
                         My Vault Boxes
                     </div>
-                    <div class="sidebar-link" id="sl-documents" onclick="setDashTab('documents')">
+                    <div class="sidebar-link" id="sl-documents" onclick="setDashTab('#')">
                         <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
                         My Estate Documents
                     </div>
-                    <div class="sidebar-link" id="sl-digital" onclick="setDashTab('digital')">
+                    <div class="sidebar-link" id="sl-digital" onclick="setDashTab('#')">
                         <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path><path d="M9 9h1m4 0h1M9 12h6"></path></svg>
                         My Digital Legacy
                     </div>
-                    <div class="sidebar-link" id="sl-protectors" onclick="setDashTab('protectors')">
+                    <div class="sidebar-link" id="sl-protectors" onclick="setDashLink('/plan-protectors/')">
                         <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                         My Plan Protectors
                     </div>
                 </div>
                 <div class="sidebar-section">
                     <div class="sidebar-section-label">Account</div>
-                    <div class="sidebar-link" id="sl-settings" onclick="setDashTab('settings')">
+                    <div class="sidebar-link" id="sl-settings" onclick="setDashLink('/settings/')">
                         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"></path></svg>
                         Settings
                     </div>
@@ -144,7 +144,7 @@
                         </div>
                         <div id="nd-relation" style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9a8c78;margin-bottom:16px;"></div>
                         <div id="nd-gifts" style="display:flex;flex-direction:column;gap:8px;"></div>
-                        <button onclick="document.getElementById('node-detail').style.display='none';document.getElementById('node-detail-overlay').style.display='none';setDashTab('plans')" style="margin-top:20px;width:100%;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:#c9a96e;color:#111827;border:none;padding:12px;cursor:pointer;">Add Gift for This Person</button>
+                        <button onclick="document.getElementById('node-detail').style.display='none';document.getElementById('node-detail-overlay').style.display='none';setDashLink('/remembrance-plan/')" style="margin-top:20px;width:100%;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:#c9a96e;color:#111827;border:none;padding:12px;cursor:pointer;">Add Gift for This Person</button>
                     </div>
                     <div id="node-detail-overlay" onclick="document.getElementById('node-detail').style.display='none';this.style.display='none'" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.2);z-index:99;"></div>
 
@@ -630,12 +630,23 @@
             <div class="modal-section-title">Personal Information</div>
             <div class="modal-row">
                 <div class="modal-field">
-                <label class="modal-label">First Name *</label>
-                <input class="modal-input" type="text" id="member-first-name" placeholder="e.g. Margaret">
+                    <label class="modal-label">First Name *</label>
+                    <input class="modal-input" type="text" id="member-first-name" placeholder="e.g. Margaret">
                 </div>
                 <div class="modal-field">
-                <label class="modal-label">Last Name *</label>
-                <input class="modal-input" type="text" id="member-last-name" placeholder="e.g. Thompson">
+                    <label class="modal-label">Last Name *</label>
+                    <input class="modal-input" type="text" id="member-last-name" placeholder="e.g. Thompson">
+                </div>
+            </div>
+
+            <div class="modal-row">
+                <div class="modal-field">
+                    <label class="modal-label">Phone *</label>
+                    <input class="modal-input" type="text" id="member-phone" placeholder="e.g. 555-1234">
+                </div>
+                <div class="modal-field">
+                    <label class="modal-label">Address *</label>
+                    <input class="modal-input" type="text" id="member-address" placeholder="e.g. 123 Main St, Anytown, USA">
                 </div>
             </div>
 
@@ -776,26 +787,51 @@
             }
         }
 
+        function validateEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+
+        // Basic international format with optional country code
+        function validatePhone(phone) {
+            const phoneRegex = /^[0-9\s\-().+]+$/;
+            return phoneRegex.test(phone);
+        }
+
+        document.getElementById('member-phone').addEventListener('input', function(e) {
+            // Remove invalid characters in real-time
+            this.value = this.value.replace(/[^0-9\s\-().+]/g, '');
+        });
+
         function saveAddMember() {
             var firstName = document.getElementById('member-first-name').value.trim();
             var lastName = document.getElementById('member-last-name').value.trim();
             var relationship = document.getElementById('member-relationship').value;
             var dob = document.getElementById('member-dob').value;
+            var emailaddress = document.getElementById('member-email').value.trim();
+            var phone = document.getElementById('member-phone').value.trim();
+            var address = document.getElementById('member-address').value.trim();
 
             var valid = true;
             // Reset borders
-            ['member-first-name','member-last-name','member-relationship','member-dob'].forEach(function(id) {
+            ['member-first-name','member-last-name','member-relationship','member-dob','member-phone','member-address'].forEach(function(id) {
             document.getElementById(id).style.borderColor = '';
             });
             if (!firstName) { document.getElementById('member-first-name').style.borderColor = '#b03030'; valid = false; }
             if (!lastName) { document.getElementById('member-last-name').style.borderColor = '#b03030'; valid = false; }
             if (!relationship) { document.getElementById('member-relationship').style.borderColor = '#b03030'; valid = false; }
             if (!dob) { document.getElementById('member-dob').style.borderColor = '#b03030'; valid = false; }
+            if (!validateEmail(emailaddress)) { document.getElementById('member-email').style.borderColor = '#b03030'; valid = false; }
+            if (!validatePhone(phone)) { document.getElementById('member-phone').style.borderColor = '#b03030'; valid = false; }
+            if (!address) { document.getElementById('member-address').style.borderColor = '#b03030'; valid = false; }
             if (!valid) {
             if (!firstName) document.getElementById('member-first-name').focus();
             else if (!lastName) document.getElementById('member-last-name').focus();
+            else if (!validatePhone(phone)) document.getElementById('member-phone').focus();
+            else if (!address) document.getElementById('member-address').focus();
             else if (!relationship) document.getElementById('member-relationship').focus();
-            else document.getElementById('member-dob').focus();
+            else if (!dob) document.getElementById('member-dob').focus();
+            else document.getElementById('member-email').focus();
             return;
             }
 
@@ -806,11 +842,13 @@
             document.getElementById('member-first-name').value = '';
             document.getElementById('member-last-name').value = '';
             document.getElementById('member-relationship').value = '';
+            document.getElementById('member-phone').value = '';
+            document.getElementById('member-address').value = '';
             document.getElementById('member-dob').value = '';
             document.getElementById('member-email').value = '';
             document.getElementById('member-notes').value = '';
             document.getElementById('important-dates-list').innerHTML = '';
-            ['member-first-name','member-last-name','member-relationship','member-dob'].forEach(function(id) {
+            ['member-first-name','member-last-name','member-relationship','member-dob','member-phone','member-address'].forEach(function(id) {
             document.getElementById(id).style.borderColor = '';
             });
 
@@ -936,6 +974,25 @@
             }).join('');
             document.getElementById('node-detail').style.display = 'block';
             document.getElementById('node-detail-overlay').style.display = 'block';
+        }
+
+        function setDashLink(link) {
+            var linkDash = link;
+            window.location.href = linkDash;
+        }
+
+        // ── Dashboard tabs ──
+        function setDashTab(tab) {
+            document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+            document.querySelectorAll('.sidebar-link').forEach(function(l){ l.classList.remove('active'); });
+            var panel = document.getElementById('tab-' + tab);
+            if (panel) panel.classList.add('active');
+            var sl = document.getElementById('sl-' + tab);
+            if (sl) sl.classList.add('active');
+            // closeMobileSidebar();
+            window.scrollTo(0,0);
+            // Redraw tree connectors when switching to family tab
+            if (tab === 'family') setTimeout(drawTreeConnectors, 50);
         }
 
         // Draw connectors on load, resize, and scroll of tree canvas
