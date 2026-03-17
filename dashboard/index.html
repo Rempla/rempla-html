@@ -94,7 +94,151 @@
                 </div>
             </aside>
             <main class="dash-main">
-                Dashboard
+                <!-- OVERVIEW tab -->
+                <div class="tab-panel active" id="tab-overview">
+                    <h2 class="planning-tree-title" style="margin-bottom:28px">Welcome back, Matthew</h2>
+
+                    <div class="dash-stats-grid">
+                    <div class="dash-stat-card">
+                        <div class="dash-stat-icon" style="background:rgba(201,169,110,0.12);">
+                        <svg viewBox="0 0 24 24" style="stroke:#c9a96e;"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"></path></svg>
+                        </div>
+                        <div>
+                        <div class="dash-stat-label">Planning Tree</div>
+                        <div class="dash-stat-value">9</div>
+                        </div>
+                    </div>
+                    <div class="dash-stat-card">
+                        <div class="dash-stat-icon" style="background:rgba(80,160,80,0.08);">
+                        <svg viewBox="0 0 24 24" style="stroke:#3a8a3a;"><path d="M20 12v10H4V12"></path><path d="M2 7h20v5H2z"></path><path d="M12 22V7"></path><path d="M12 7H7.5a2.5 2.5 0 110-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 100-5C13 2 12 7 12 7z"></path></svg>
+                        </div>
+                        <div>
+                        <div class="dash-stat-label">Gifts Planned</div>
+                        <div class="dash-stat-value" style="color:#a07840;">4</div>
+                        </div>
+                    </div>
+                    <div class="dash-stat-card">
+                        <div class="dash-stat-icon" style="background:rgba(80,120,200,0.08);">
+                        <svg viewBox="0 0 24 24" style="stroke:#6080c8;"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 010 7H6"></path></svg>
+                        </div>
+                        <div>
+                        <div class="dash-stat-label">Total Planned</div>
+                        <div class="dash-stat-value">$1,567</div>
+                        </div>
+                    </div>
+                    <div class="dash-stat-card">
+                        <div class="dash-stat-icon" style="background:rgba(138,96,48,0.08);">
+                        <svg viewBox="0 0 24 24" style="stroke:#a07840;"><rect x="3" y="11" width="18" height="11" rx="1"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+                        </div>
+                        <div>
+                        <div class="dash-stat-label">Vault Boxes</div>
+                        <div class="dash-stat-value">2</div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- CTA Banner -->
+                    <div class="dash-cta-banner">
+                    <div style="position:relative;z-index:1;">
+                        <div class="dash-cta-eyebrow">Continue Your Plan</div>
+                        <div class="dash-cta-title">Your plan is 42% complete</div>
+                        <div class="dash-cta-sub">Rempla suggests adding anniversary flowers for your wife.</div>
+                        <div class="dash-cta-progress">
+                        <div class="dash-cta-bar"><div class="dash-cta-fill" style="width:42%"></div></div>
+                        <div class="dash-cta-percent">42%</div>
+                        </div>
+                    </div>
+                    <button class="btn-hero-primary" onclick="setDashLink('/planning-tree/')" style="position:relative;z-index:1;">Continue Planning</button>
+                    </div>
+
+                    <!-- Rempla AI Assistant -->
+                    <div class="rempla-chat" style="position:relative;margin-bottom:32px;">
+                    <div class="chat-header">
+                        <div class="chat-ai-avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M6 20v-2a6 6 0 0112 0v2"></path></svg></div>
+                        <div class="chat-header-title"><div class="chat-header-name">Rempla</div><div class="chat-header-status">AI Planning Guide · Online</div></div><div class="chat-typing-dots"><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="chat-messages" id="overview-chat-messages" style="min-height:auto;">
+                        <div class="chat-msg chat-msg-ai">Welcome back, Matthew. Your plan is <strong>42% complete</strong> — you're making great progress.</div>
+                        <div class="chat-msg chat-msg-ai">Here's what I'd focus on next:<br>• Add remembrance gifts for <strong>Emma, Noah &amp; Lily</strong><br>• Upload your remaining estate documents<br>• Add a second Plan Protector for backup coverage</div>
+                        <div class="chat-suggestion" onclick="chatSuggest('overview-chat',this,'What should I do first?')">✦ What should I do first?</div>
+                        <div class="chat-suggestion" onclick="chatSuggest('overview-chat',this,'How do I add a gift for my grandchildren?')">✦ How do I add a gift for my grandchildren?</div>
+                        <div class="chat-suggestion" onclick="chatSuggest('overview-chat',this,'Why do I need a second Plan Protector?')">✦ Why do I need a second Plan Protector?</div>
+                    </div>
+                    <div class="chat-input-area">
+                        <input class="chat-input" id="overview-chat-input" placeholder="Ask Rempla about your plan…" type="text" onkeydown="if(event.key==='Enter')sendChat('overview-chat')">
+                        <button class="chat-send" onclick="sendChat('overview-chat')">
+                        <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        </button>
+                    </div>
+                    </div>
+
+                    <!-- Activity + Quick Actions -->
+                    <div class="dash-overview-grid">
+                    <div>
+                        <div class="dash-section-title">Recent Activity</div>
+                        <div class="activity-timeline">
+                        <div class="activity-item">
+                            <div class="activity-dot gold"></div>
+                            <div class="activity-content">
+                            <div class="activity-text"><strong>Vault Box Shipped</strong> — Medium vault box for "Grandfather's Watch" is on its way to you.</div>
+                            <div class="activity-time">Today, 2:14 PM</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-dot green"></div>
+                            <div class="activity-content">
+                            <div class="activity-text"><strong>Plan Protector Confirmed</strong> — Susan Harlow accepted her Plan Protector designation.</div>
+                            <div class="activity-time">Yesterday, 10:30 AM</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-dot blue"></div>
+                            <div class="activity-content">
+                            <div class="activity-text"><strong>Document Uploaded</strong> — Durable_Power_of_Attorney.docx categorized as Power of Attorney.</div>
+                            <div class="activity-time">Feb 21, 2026</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-dot gold"></div>
+                            <div class="activity-content">
+                            <div class="activity-text"><strong>Scheduled Gift Created</strong> — Anniversary Roses for Margaret added to your plan.</div>
+                            <div class="activity-time">Feb 18, 2026</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-dot"></div>
+                            <div class="activity-content">
+                            <div class="activity-text"><strong>Account Created</strong> — Welcome to Rempla, Matthew. Your Legacy Plan is now active.</div>
+                            <div class="activity-time">Feb 15, 2026</div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div>
+                        <div class="dash-section-title">Quick Actions</div>
+                        <div class="quick-actions">
+                        <button class="quick-action-btn" onclick="setDashLink('/planning-tree/')">
+                            <div class="quick-action-icon" style="background:rgba(201,169,110,0.1);">🌳</div>
+                            <div><div class="quick-action-label">Edit Planning Tree</div><div class="quick-action-desc">Add or update family members</div></div>
+                        </button>
+                        <button class="quick-action-btn" onclick="setDashLink('/remembrance-plan/')">
+                            <div class="quick-action-icon" style="background:rgba(80,160,80,0.06);">🎁</div>
+                            <div><div class="quick-action-label">Add a Gift</div><div class="quick-action-desc">Vault box or scheduled gift</div></div>
+                        </button>
+                        <button class="quick-action-btn" onclick="setDashLink('#')">
+                            <div class="quick-action-icon" style="background:rgba(80,120,200,0.06);">📄</div>
+                            <div><div class="quick-action-label">Upload Document</div><div class="quick-action-desc">Will, trust, or power of attorney</div></div>
+                        </button>
+                        <button class="quick-action-btn" onclick="setDashLink('/plan-protectors/')">
+                            <div class="quick-action-icon" style="background:rgba(123,94,167,0.06);">🛡️</div>
+                            <div><div class="quick-action-label">Manage Plan Protectors</div><div class="quick-action-desc">Add a second protector (recommended)</div></div>
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
             </main>
         </div>
     </div>
