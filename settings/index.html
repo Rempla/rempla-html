@@ -94,7 +94,87 @@
                 </div>
             </aside>
             <main class="dash-main">
-                Settings
+                <!-- SETTINGS tab -->
+                <div class="tab-panel" id="tab-settings">
+                    <div class="tab-with-sidebar">
+                    <div class="tab-main-content">
+                    <div class="planning-tree-header" style="margin-bottom:32px;">
+                    <div><div class="section-eyebrow">Account</div><div class="planning-tree-title">Settings</div></div>
+                    </div>
+                    <div style="max-width:700px;">
+                    <div class="settings-section">
+                        <div class="settings-section-title">Profile</div>
+                        <div class="settings-row">
+                        <div><div class="settings-label">Full Name</div></div>
+                        <input class="settings-input" value="Matthew Thompson" type="text">
+                        </div>
+                        <div class="settings-row">
+                        <div><div class="settings-label">Email Address</div></div>
+                        <input class="settings-input" value="matt@example.com" type="email">
+                        </div>
+                        <div class="settings-row">
+                        <div><div class="settings-label">Phone</div></div>
+                        <input class="settings-input" value="+1 (555) 123-4567" type="tel">
+                        </div>
+                    </div>
+                    <div class="settings-section">
+                        <div class="settings-section-title">Notifications</div>
+                        <div class="settings-row">
+                        <div><div class="settings-label">Email notifications</div><div class="settings-desc">Receive updates about your plan via email</div></div>
+                        <button class="settings-toggle on" onclick="this.classList.toggle('on')"></button>
+                        </div>
+                        <div class="settings-row">
+                        <div><div class="settings-label">Vault box shipping alerts</div><div class="settings-desc">Get notified when vault boxes ship or arrive</div></div>
+                        <button class="settings-toggle on" onclick="this.classList.toggle('on')"></button>
+                        </div>
+                        <div class="settings-row">
+                        <div><div class="settings-label">Plan Protector activity alerts</div><div class="settings-desc">Know when plan protectors accept or modify their role</div></div>
+                        <button class="settings-toggle on" onclick="this.classList.toggle('on')"></button>
+                        </div>
+                        <div class="settings-row">
+                        <div><div class="settings-label">Marketing emails</div><div class="settings-desc">Tips, stories, and updates from Rempla</div></div>
+                        <button class="settings-toggle" onclick="this.classList.toggle('on')"></button>
+                        </div>
+                    </div>
+                    <div class="settings-section">
+                        <div class="settings-section-title">Plan &amp; Billing</div>
+                        <div class="settings-row">
+                        <div><div class="settings-label">Current Plan</div><div class="settings-desc">Legacy Plan · $499 one-time + $79/yr storage</div></div>
+                        <button class="btn-primary" style="font-size:11px;padding:8px 18px;">Manage Plan</button>
+                        </div>
+                        <div class="settings-row">
+                        <div><div class="settings-label">Annual Storage Renewal</div><div class="settings-desc">Next renewal: February 15, 2027</div></div>
+                        <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;background:rgba(80, 160, 80, 0.1);color:#3a8a3a;">Active</span>
+                        </div>
+                    </div>
+                    <div class="settings-save-bar">
+                        <button class="btn-settings-cancel">Discard Changes</button>
+                        <button class="btn-settings-save">Save Changes</button>
+                    </div>
+                    </div>
+                    </div><!-- /tab-main-content -->
+                    <div class="tab-sidebar-chat">
+                        <div class="rempla-chat">
+                        <div class="chat-header">
+                            <div class="chat-ai-avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M6 20v-2a6 6 0 0112 0v2"></path></svg></div>
+                            <div class="chat-header-title"><div class="chat-header-name">Rempla</div><div class="chat-header-status">AI Planning Guide · Online</div></div><div class="chat-typing-dots"><span></span><span></span><span></span></div>
+                        </div>
+                        <div class="chat-messages" id="settings-chat-messages">
+                            <div class="chat-msg chat-msg-ai">This is your account settings area. I can help you understand any option or walk you through any changes.</div>
+                            <div class="chat-suggestion" onclick="chatSuggest('settings-chat',this,'How do I change my email address?')">✦ How do I change my email address?</div>
+                            <div class="chat-suggestion" onclick="chatSuggest('settings-chat',this,'How do I pause my plan?')">✦ How do I pause my plan?</div>
+                            <div class="chat-suggestion" onclick="chatSuggest('settings-chat',this,'What happens if I cancel my account?')">✦ What happens if I cancel my account?</div>
+                        </div>
+                        <div class="chat-input-area">
+                            <input class="chat-input" id="settings-chat-input" placeholder="Ask Rempla about your account settings…" type="text" onkeydown="if(event.key==='Enter')sendChat('settings-chat')">
+                            <button class="chat-send" onclick="sendChat('settings-chat')">
+                            <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            </button>
+                        </div>
+                        </div>
+                    </div>
+                    </div><!-- /tab-with-sidebar -->
+                </div>
             </main>
         </div>
     </div>
