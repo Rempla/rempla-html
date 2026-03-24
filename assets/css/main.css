@@ -1,3 +1,10 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Jost", sans-serif;
+}
+
 a {
   text-decoration: none;
 }
@@ -30,13 +37,6 @@ a {
     opacity: 1;
   }
 }
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Jost", sans-serif;
-}
-
 .container {
   width: 100%;
   height: 100%;
@@ -675,23 +675,23 @@ a {
   flex-shrink: 0;
   box-shadow: 0 0 4px rgba(76, 175, 80, 0.5);
 }
-.container .dash-main .rempla-chat .chat-header .chat-header-title .chat-typing-dots {
+.container .dash-main .rempla-chat .chat-typing-dots {
   display: inline-flex;
   gap: 3px;
   margin-left: auto;
   opacity: 0.5;
 }
-.container .dash-main .rempla-chat .chat-header .chat-header-title .chat-typing-dots span {
+.container .dash-main .rempla-chat .chat-typing-dots span {
   width: 5px;
   height: 5px;
   border-radius: 50%;
   background-color: #c9a96e;
   animation: typingBounce 1.4s ease-in-out infinite;
 }
-.container .dash-main .rempla-chat .chat-header .chat-header-title .chat-typing-dots span:nth-child(2) {
+.container .dash-main .rempla-chat .chat-typing-dots span:nth-child(2) {
   animation-delay: 0.2s;
 }
-.container .dash-main .rempla-chat .chat-header .chat-header-title .chat-typing-dots span:nth-child(3) {
+.container .dash-main .rempla-chat .chat-typing-dots span:nth-child(3) {
   animation-delay: 0.4s;
 }
 .container .dash-main .rempla-chat .chat-messages {
@@ -1396,6 +1396,84 @@ a {
   stroke: #9a8c78;
   fill: none;
   stroke-width: 1.5;
+}
+
+.vault-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.vault-stats-grid .vault-stat {
+  background: white;
+  border: 1px solid #ede5d8;
+  padding: 24px;
+  text-align: center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vault-stats-grid .vault-stat:hover {
+  border-color: #c9a96e;
+  box-shadow: 0 4px 16px rgba(201, 169, 110, 0.08);
+}
+.vault-stats-grid .vault-stat .vault-stat-value {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 36px;
+  line-height: 1;
+}
+.vault-stats-grid .vault-stat .vault-stat-label {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9a8c78;
+  margin-top: 6px;
+}
+
+.vault-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 8px;
+}
+.vault-grid .vault-card {
+  background: white;
+  border: 1px solid #ede5d8;
+  padding: 24px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vault-grid .vault-card:hover {
+  border-color: #d4c4ae;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+.vault-grid .vault-card .vault-card-icon {
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+.vault-grid .vault-card .vault-card-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2a2015;
+  margin-bottom: 6px;
+}
+.vault-grid .vault-card .vault-card-detail {
+  font-size: 12px;
+  color: #9a8c78;
+  line-height: 1.5;
+}
+.vault-grid .vault-card .vault-card-tag {
+  margin-top: 14px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  display: inline-block;
+}
+.vault-grid .vault-card .vault-card-tag.tag-stored {
+  background: rgba(80, 160, 80, 0.1);
+  color: #3a8a3a;
+}
+.vault-grid .vault-card .vault-card-tag.tag-scheduled {
+  background: rgba(201, 169, 110, 0.12);
+  color: #a07840;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -2,13 +2,6 @@
 @use 'basics';
 @use 'animations';
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Jost', sans-serif;
-}
-
 .container {
     width: 100%;
     height: 100%;
@@ -727,27 +720,27 @@
                             box-shadow: 0 0 4px rgba(76, 175, 80, 0.5);
                         }
                     }
+                }
+            }
 
-                    .chat-typing-dots {
-                        display: inline-flex;
-                        gap: 3px;
-                        margin-left: auto;
-                        opacity: 0.5;
+            .chat-typing-dots {
+                display: inline-flex;
+                gap: 3px;
+                margin-left: auto;
+                opacity: 0.5;
 
-                        span {
-                            width: 5px;
-                            height: 5px;
-                            border-radius: 50%;
-                            background-color: colors.$gold-color;
-                            animation: typingBounce 1.4s ease-in-out infinite;
+                span {
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                    background-color: colors.$gold-color;
+                    animation: typingBounce 1.4s ease-in-out infinite;
 
-                            &:nth-child(2) {
-                                animation-delay: 0.2s;
-                            }
-                            &:nth-child(3) {
-                                animation-delay: 0.4s;
-                            }
-                        }
+                    &:nth-child(2) {
+                        animation-delay: 0.2s;
+                    }
+                    &:nth-child(3) {
+                        animation-delay: 0.4s;
                     }
                 }
             }
@@ -1535,6 +1528,95 @@
                         stroke-width: 1.5;
                     }
                 }
+            }
+        }
+    }
+}
+.vault-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+
+    .vault-stat {
+        background: white;
+        border: 1px solid colors.$warm-mid-color;
+        padding: 24px;
+        text-align: center;
+        transition: border-color 0.2s, box-shadow 0.2s;
+
+        &:hover {
+            border-color: colors.$gold-color;
+            box-shadow: 0 4px 16px rgba(201, 169, 110, 0.08);
+        }
+
+        .vault-stat-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            line-height: 1;
+        }
+
+        .vault-stat-label {
+            font-size: 11px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: colors.$text-light-color;
+            margin-top: 6px;
+        }
+    }
+}
+
+.vault-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 8px;
+
+    .vault-card {
+        background: white;
+        border: 1px solid colors.$warm-mid-color;
+        padding: 24px;
+        transition: border-color 0.2s, box-shadow 0.2s;
+
+        &:hover {
+            border-color: colors.$warm-dark-color;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+        }
+
+        .vault-card-icon {
+            font-size: 28px;
+            margin-bottom: 14px;
+        }
+
+        .vault-card-name {
+            font-size: 14px;
+            font-weight: 500;
+            color: colors.$text-dark-color;
+            margin-bottom: 6px;
+        }
+
+        .vault-card-detail {
+            font-size: 12px;
+            color: colors.$text-light-color;
+            line-height: 1.5;
+        }
+
+        .vault-card-tag {
+            margin-top: 14px;
+            font-size: 10px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            display: inline-block;
+
+            &.tag-stored {
+                background: colors.$green-bg-color;
+                color: colors.$green-color;
+            }
+
+            &.tag-scheduled {
+                background: rgba(201, 169, 110, 0.12);
+                color: colors.$gold-dark-color;
             }
         }
     }
