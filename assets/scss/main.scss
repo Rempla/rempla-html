@@ -2,6 +2,7 @@
 @use 'basics';
 @use 'animations';
 @use 'login';
+@use 'modal';
 
 .container {
     width: 100%;
@@ -1758,4 +1759,113 @@
     position: sticky;
     top: 20px;
     align-self: start;
+}
+
+.gift-card {
+    background: white;
+    border: 1px solid colors.$warm-mid-color;
+    padding: 24px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    .gift-card-icon {
+        width: 56px;
+        height: 56px;
+        background: colors.$cream-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 22px;
+    }
+
+    .gift-card-body {
+        flex: 1;
+
+        .gift-card-type {
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: colors.$gold-color;
+            margin-bottom: 6px;
+        }
+
+        .gift-card-title {
+            font-size: 15px;
+            font-weight: 500;
+            color: colors.$text-dark-color;
+            margin-bottom: 4px;
+        }
+
+        .gift-card-detail {
+            font-size: 13px;
+            color: colors.$text-light-color;
+            line-height: 1.5;
+        }
+
+        .gift-card-meta{
+            display: flex;
+            gap: 16px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+
+            .gift-meta-item {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                font-size: 11px;
+                color: colors.$text-light-color;
+
+                svg {
+                    width: 12px;
+                    height: 12px;
+                    stroke: colors.$text-light-color;
+                    fill: none;
+                    stroke-width: 1.5;
+                }
+            }
+        }
+    }
+
+    .gift-card-status {
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 4px 10px;
+
+        &.status-stored {
+            background: colors.$green-bg-color;
+            color: colors.$green-color;
+        }
+    }
+
+    .doc-actions {
+        display: flex;
+        gap: 10px;
+        margin-left: auto;
+        flex-shrink: 0;
+
+        .doc-action-btn {
+            background: none;
+            border: 1px solid colors.$warm-mid-color;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s;
+            color: colors.$text-light-color;
+
+            svg {
+                width: 14px;
+                height: 14px;
+                stroke: currentColor;
+                fill: none;
+                stroke-width: 1.8;
+            }
+        }
+    }
 }
