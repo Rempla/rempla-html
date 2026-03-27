@@ -496,27 +496,33 @@
 
             <div class="modal-row">
                 <div class="modal-field">
+                    <label class="modal-label">Email *<span style="color:#9a8c78;font-weight:300;">(for gift notifications)</span></label>
+                    <input class="modal-input" type="email" id="member-email" placeholder="e.g. margaret@example.com">
+                </div>
+                <div class="modal-field">
                     <label class="modal-label">Phone *</label>
                     <input class="modal-input" type="text" id="member-phone" placeholder="e.g. 555-1234">
                 </div>
+            </div>
+
+            <div class="modal-row">
                 <div class="modal-field">
                     <label class="modal-label">Address *</label>
                     <input class="modal-input" type="text" id="member-address" placeholder="e.g. 123 Main St">
                 </div>
-            </div>
 
-            <div class="modal-row">
                 <div class="modal-field">
                     <label class="modal-label">Address Line 2</label>
                     <input class="modal-input" type="text" id="member-address-line2" placeholder="e.g. Apt 4B">
                 </div>
+            </div>
+
+            <div class="modal-row">
                 <div class="modal-field">
                     <label class="modal-label">City *</label>
                     <input class="modal-input" type="text" id="member-city" placeholder="e.g. Anytown">
                 </div>
-            </div>
 
-            <div class="modal-row">
                 <div class="modal-field">
                     <label class="modal-label">State *</label>
                     <select class="modal-input" name="member-state" id="member-state">
@@ -528,6 +534,7 @@
                         <option value="CA">California</option>
                         <option value="CO">Colorado</option>
                         <option value="CT">Connecticut</option>
+                        <option value="DC">District of Columbia</option>
                         <option value="DE">Delaware</option>
                         <option value="FL">Florida</option>
                         <option value="GA">Georgia</option>
@@ -550,6 +557,8 @@
                         <option value="NE">Nebraska</option>
                         <option value="NV">Nevada</option>
                         <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
                         <option value="NY">New York</option>
                         <option value="NC">North Carolina</option>
                         <option value="ND">North Dakota</option>
@@ -572,7 +581,9 @@
                         <!-- Add more states as needed -->
                     </select>
                 </div>
+            </div>
 
+            <div class="modal-row">
                 <div class="modal-field">
                     <label class="modal-label">ZIP Code *</label>
                     <input class="modal-input" type="text" id="member-zip" placeholder="e.g. 12345">
@@ -581,44 +592,39 @@
 
             <div class="modal-row">
                 <div class="modal-field">
-                <label class="modal-label">Relationship *</label>
-                <select class="modal-select" id="member-relationship">
-                    <option value="" disabled="" selected="">Select relationship…</option>
-                    <optgroup label="Immediate Family">
-                    <option>Spouse / Partner</option>
-                    <option>Son</option>
-                    <option>Daughter</option>
-                    <option>Father</option>
-                    <option>Mother</option>
-                    </optgroup>
-                    <optgroup label="Extended Family">
-                    <option>Grandson</option>
-                    <option>Granddaughter</option>
-                    <option>Brother</option>
-                    <option>Sister</option>
-                    <option>Uncle</option>
-                    <option>Aunt</option>
-                    <option>Nephew</option>
-                    <option>Niece</option>
-                    <option>Cousin</option>
-                    <option>Son-in-Law</option>
-                    <option>Daughter-in-Law</option>
-                    </optgroup>
-                    <optgroup label="Other">
-                    <option>Close Friend</option>
-                    <option>Other</option>
-                    </optgroup>
-                </select>
+                    <label class="modal-label">Relationship *</label>
+                    <select class="modal-select" id="member-relationship">
+                        <option value="" disabled="" selected="">Select relationship…</option>
+                        <optgroup label="Immediate Family">
+                        <option>Spouse / Partner</option>
+                        <option>Son</option>
+                        <option>Daughter</option>
+                        <option>Father</option>
+                        <option>Mother</option>
+                        </optgroup>
+                        <optgroup label="Extended Family">
+                        <option>Grandson</option>
+                        <option>Granddaughter</option>
+                        <option>Brother</option>
+                        <option>Sister</option>
+                        <option>Uncle</option>
+                        <option>Aunt</option>
+                        <option>Nephew</option>
+                        <option>Niece</option>
+                        <option>Cousin</option>
+                        <option>Son-in-Law</option>
+                        <option>Daughter-in-Law</option>
+                        </optgroup>
+                        <optgroup label="Other">
+                        <option>Close Friend</option>
+                        <option>Other</option>
+                        </optgroup>
+                    </select>
                 </div>
                 <div class="modal-field">
-                <label class="modal-label">Date of Birth *</label>
-                <input class="modal-input" type="date" id="member-dob">
+                    <label class="modal-label">Date of Birth</label>
+                    <input class="modal-input" type="date" id="member-dob">
                 </div>
-            </div>
-
-            <div class="modal-field">
-                <label class="modal-label">Email <span style="color:#9a8c78;font-weight:300;">(for gift notifications)</span></label>
-                <input class="modal-input" type="email" id="member-email" placeholder="e.g. margaret@example.com">
             </div>
 
             <div class="modal-divider"></div>
@@ -758,7 +764,6 @@
             var firstName = document.getElementById('member-first-name').value.trim();
             var lastName = document.getElementById('member-last-name').value.trim();
             var relationship = document.getElementById('member-relationship').value;
-            var dob = document.getElementById('member-dob').value;
             var emailaddress = document.getElementById('member-email').value.trim();
             var phone = document.getElementById('member-phone').value.trim();
             var address = document.getElementById('member-address').value.trim();
@@ -769,13 +774,12 @@
 
             var valid = true;
             // Reset borders
-            ['member-first-name','member-last-name','member-relationship','member-dob','member-phone','member-address'].forEach(function(id) {
+            ['member-first-name','member-last-name','member-relationship','member-phone','member-address'].forEach(function(id) {
             document.getElementById(id).style.borderColor = '';
             });
             if (!firstName) { document.getElementById('member-first-name').style.borderColor = '#b03030'; valid = false; }
             if (!lastName) { document.getElementById('member-last-name').style.borderColor = '#b03030'; valid = false; }
             if (!relationship) { document.getElementById('member-relationship').style.borderColor = '#b03030'; valid = false; }
-            if (!dob) { document.getElementById('member-dob').style.borderColor = '#b03030'; valid = false; }
             if (!validateEmail(emailaddress)) { document.getElementById('member-email').style.borderColor = '#b03030'; valid = false; }
             if (!validatePhone(phone)) { document.getElementById('member-phone').style.borderColor = '#b03030'; valid = false; }
             if (!address) { document.getElementById('member-address').style.borderColor = '#b03030'; valid = false; }
@@ -791,7 +795,6 @@
             else if (!state) document.getElementById('member-state').focus();
             else if (!zip) document.getElementById('member-zip').focus();
             else if (!relationship) document.getElementById('member-relationship').focus();
-            else if (!dob) document.getElementById('member-dob').focus();
             else document.getElementById('member-email').focus();
             return;
             }
