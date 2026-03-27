@@ -786,6 +786,16 @@
                     gap: 5px;
                     background: white;
                 }
+
+                .chat-msg-user {
+                    background: colors.$navy-color;
+                    padding: 14px 16px;
+                    font-size: 13px;
+                    line-height: 1.65;
+                    color: rgba(255, 255, 255, 0.8);
+                    align-self: flex-end;
+                    border-radius: 14px 2px 14px 14px;
+                }
             }
 
             .chat-input-area {
@@ -1880,8 +1890,9 @@
         bottom: 125%;
         left: 50%;
         transform: translateX(-50%);
-        background-color: colors.$navy-color;
-        color: colors.$gold-light-color;
+        background-color: white;
+        border: 1px solid colors.$gold-dark-color;
+        color: #9a8c78;
         padding: 5px 10px;
         border-radius: 2px;
         white-space: nowrap;

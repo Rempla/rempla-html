@@ -1385,6 +1385,15 @@ a {
   gap: 5px;
   background: white;
 }
+.container .dash-main .rempla-chat .chat-messages .chat-msg-user {
+  background: #1a2235;
+  padding: 14px 16px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.8);
+  align-self: flex-end;
+  border-radius: 14px 2px 14px 14px;
+}
 .container .dash-main .rempla-chat .chat-input-area {
   padding: 16px 20px;
   border-top: 1px solid #ede5d8;
@@ -2359,8 +2368,9 @@ a {
   bottom: 125%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #1a2235;
-  color: #e8d5b0;
+  background-color: white;
+  border: 1px solid #a07840;
+  color: #9a8c78;
   padding: 5px 10px;
   border-radius: 2px;
   white-space: nowrap;

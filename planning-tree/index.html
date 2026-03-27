@@ -519,10 +519,62 @@
             <div class="modal-row">
                 <div class="modal-field">
                     <label class="modal-label">State *</label>
-                    <input class="modal-input" type="text" id="member-state" placeholder="e.g. AnyState">
+                    <select class="modal-input" name="member-state" id="member-state">
+                        <option value="">Select a state</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                        <!-- Add more states as needed -->
+                    </select>
                 </div>
+
                 <div class="modal-field">
-                    <label class="modal-label">ZIP *</label>
+                    <label class="modal-label">ZIP Code *</label>
                     <input class="modal-input" type="text" id="member-zip" placeholder="e.g. 12345">
                 </div>
             </div>
@@ -565,7 +617,7 @@
             </div>
 
             <div class="modal-field">
-                <label class="modal-label">Email Address <span style="color:#9a8c78;font-weight:300;">(for gift notifications)</span></label>
+                <label class="modal-label">Email <span style="color:#9a8c78;font-weight:300;">(for gift notifications)</span></label>
                 <input class="modal-input" type="email" id="member-email" placeholder="e.g. margaret@example.com">
             </div>
 
@@ -663,6 +715,28 @@
             inputs[0].focus();
             }
         }
+
+        // ── Chat input ──
+        document.querySelectorAll('.chat-input').forEach(function(input) {
+            input.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && input.value.trim()) {
+                var msgs = input.closest('.rempla-chat').querySelector('.chat-messages');
+                var userMsg = document.createElement('div');
+                userMsg.className = 'chat-msg chat-msg-user';
+                userMsg.textContent = input.value;
+                msgs.appendChild(userMsg);
+                input.value = '';
+                msgs.scrollTop = msgs.scrollHeight;
+                setTimeout(function() {
+                var aiMsg = document.createElement('div');
+                aiMsg.className = 'chat-msg chat-msg-ai';
+                aiMsg.textContent = "Great question! I'm here to help you craft the most thoughtful plan possible. Let me look into that for you…";
+                msgs.appendChild(aiMsg);
+                msgs.scrollTop = msgs.scrollHeight;
+                }, 900);
+            }
+            });
+        });
 
         function validateEmail(email) {
             const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -884,6 +958,88 @@
             window.scrollTo(0,0);
             // Redraw tree connectors when switching to family tab
             if (tab === 'family') setTimeout(drawTreeConnectors, 50);
+        }
+
+        // ── Family chat ──
+        var familyChatResponses = {
+            'Help me add a gift for Emma, Noah and Lily': "Great idea! Emma, Noah, and Lily are your grandchildren and currently have no remembrance gifts or estate bequests planned. I'd suggest starting with a vault box for each — perhaps a personal letter and a small keepsake — timed for a milestone like their 18th or 21st birthday. Would you like to set those up as personalized vault items or scheduled gifts?",
+            'Help me add a remembrance gift for Robert and Sarah': "Absolutely. Robert and Sarah both have estate bequests linked, which is great — but neither has a remembrance gift yet. For Robert, you might consider a meaningful keepsake or annual experience. For Sarah, a vault box with personal letters could be very meaningful. Head to My Remembrance Plan to add these, and I'll guide you through the options.",
+            'How do I add a second Plan Protector?': "To add a second Plan Protector, go to My Plan Protectors in the sidebar and click 'Add Plan Protector'. You'll enter their name, relationship, and contact details, and Rempla will send them an invitation to accept the role. Having two Plan Protectors ensures your plan is executed even if one is unavailable when the time comes."
+        };
+
+        // ── Universal chat handler ──
+        var chatResponses = {
+            // Family
+            'Help me add a gift for Emma, Noah and Lily': "Great idea! Emma, Noah, and Lily are your grandchildren and currently have no remembrance gifts or estate bequests planned. I'd suggest starting with a vault box for each — perhaps a personal letter and a small keepsake — timed for a milestone like their 18th or 21st birthday. Would you like to set those up as personalized vault items or scheduled gifts?",
+            'Help me add a remembrance gift for Robert and Sarah': "Absolutely. Robert and Sarah both have estate bequests linked, which is great — but neither has a remembrance gift yet. For Robert, you might consider a meaningful keepsake or annual experience. For Sarah, a vault box with personal letters could be very meaningful. Head to My Remembrance Plan to add these, and I'll guide you through the options.",
+            'How do I add a second Plan Protector?': "To add a second Plan Protector, go to My Plan Protectors in the sidebar and click 'Add Plan Protector'. You'll enter their name, relationship, and contact details, and Rempla will send them an invitation to accept the role. Having two Plan Protectors ensures your plan is executed even if one is unavailable when the time comes.",
+            // Plans
+            'Add vault items for my grandchildren': "Great idea. Go to My Vault Boxes and click '+ Order New Box'. Add a separate box for each grandchild — Emma, Noah, and Lily. A handwritten letter or small keepsake timed to a milestone birthday is a deeply personal gift they'll treasure.",
+            'Add remembrance gifts for Robert and Sarah': "To add a remembrance gift for Robert or Sarah, click their name in My Planning Tree or go to My Remembrance Plan. From there you can add a vault box or a scheduled gift — for example, a meaningful book delivered on a milestone birthday or anniversary.",
+            'Add birthday gifts for my grandchildren': "Great idea! You can set up scheduled birthday gifts for Emma, Noah, and Lily. Go to My Remembrance Plan → Scheduled Gifts → Add Scheduled Gift. Choose each grandchild as the recipient and set the trigger to their birthday. Flowers, books, or experience gifts are popular choices — and they'll be inflation-adjusted so the value holds year after year.",
+            'How is inflation-adjustment calculated?': "Rempla uses a built-in inflation adjustment model tied to CPI (Consumer Price Index). Your escrow is funded at today's cost, and Rempla automatically adjusts the delivery value over time to maintain the same real-world purchasing power.",
+            // Overview
+            'What should I do first?': "I'd start with adding remembrance gifts for Emma, Noah, and Lily — they currently have nothing planned. Head to My Remembrance Plan and select each of them as a recipient. Even a simple personalized letter vault item would be meaningful.",
+            'How do I add a gift for my grandchildren?': "Go to My Remembrance Plan and click 'Add Gift'. Select the grandchild as the recipient, choose a gift type (vault item, scheduled gift, or personalized heirloom), and set the trigger — a birthday, milestone age, or specific date.",
+            'Why do I need a second Plan Protector?': "If Susan is unavailable when the time comes — due to travel, illness, or other circumstances — a second Plan Protector ensures your plan can still be triggered and executed. Think of it as a backup for one of the most important people in your plan.",
+            // Vault
+            'What should I put in a vault box?': "Great vault items include handwritten letters, physical photos, heirloom jewelry, watches, meaningful keepsakes, and personal recordings. Rempla will store and deliver them at exactly the right moment you designate.",
+            'Add a vault item for Sarah': "To add a vault item for Sarah, go to My Vault Boxes and click '+ Order New Box'. Select Sarah as the recipient, describe the item, and set your trigger event — her birthday, a milestone, or upon your passing.",
+            'How does vault box delivery work?': "Once your Plan Protector notifies Rempla, we coordinate secure delivery of each vault box to the designated recipient according to your instructions. Items are stored in climate-controlled facilities and shipped with white-glove care.",
+            // Documents
+            'What is a Healthcare Directive?': "A Healthcare Directive (also called an Advance Directive or Living Will) outlines your medical wishes if you become incapacitated. It tells doctors and loved ones what life-sustaining treatments you do or don't want. It works alongside your Power of Attorney.",
+            'Scan my trust for beneficiaries': "To scan your trust, make sure it's uploaded in My Estate Documents. Rempla will automatically identify named beneficiaries and link them to your planning tree — saving you from entering each one manually.",
+            'What other documents should I upload?': "Beyond your will and trust, consider uploading: a Healthcare Directive, Beneficiary Designation forms from your retirement accounts or life insurance, a Letter of Instruction, and any property deeds or financial account summaries you'd like stored securely.",
+            // Plan Protectors
+            'Who should I choose as a Plan Protector?': "Choose someone who is close to your family, reliable, and likely to be available when the time comes. A spouse, adult child, or close sibling are common choices. Avoid choosing someone elderly or in poor health. Two Plan Protectors from different households is ideal.",
+            'What does a Plan Protector actually do?': "When you pass, your Plan Protector notifies Rempla by logging into the app and triggering the execution phase. Rempla then coordinates the delivery of all your vault boxes, scheduled gifts, and digital legacy instructions according to your plan.",
+            'Add a second Plan Protector': "To add a second Plan Protector, click '+ Add Plan Protector' at the top of this section. Enter their name, relationship, and email — Rempla will send them an invitation to accept the role. They'll need to create a free account to confirm.",
+            // Digital
+            'Why should I store streaming accounts?': "Streaming accounts often have years of watch history, saved playlists, and personal data. Storing them lets your beneficiary either take over the account, download the data, or cancel it — preventing ongoing charges and preserving what matters.",
+            'Add another account': "Click '+ Add Account' at the top of this section to add a new digital account. You can store login credentials, assign a beneficiary, and specify what should happen — transfer access, close the account, memorialize it, or download the data.",
+            'How does beneficiary transfer work?': "Once your Plan Protector triggers the execution phase, Rempla notifies your designated beneficiary for each account. They receive access instructions through a secure, verified channel — never via email alone. The transfer happens according to your specified instructions.",
+            // Settings
+            'How do I change my email address?': "To update your email address, find the Email Address field in the Profile section above and type your new address. Click 'Save Changes' to confirm. You'll receive a verification link at your new email before the change takes effect.",
+            'How do I pause my plan?': "You can pause your plan from the Billing & Subscription section. While paused, Rempla will continue storing your data but won't process any scheduled deliveries. Your plan resumes automatically when your subscription is reactivated.",
+            'What happens if I cancel my account?': "If you cancel, Rempla will retain your data for 90 days, during which you can reactivate at any time. After 90 days, your data is permanently deleted. Any pre-funded escrow balances for scheduled gifts will be refunded less processing fees."
+        };
+
+        var chatFallbacks = {
+            'family-chat': "That's a thoughtful question. Let me help you think through the best way to include this in your plan. Every family member deserves to be remembered with intention.",
+            'overview-chat': "That's a great question about your plan. I'd recommend reaching out to Rempla support for more specific guidance, or exploring the relevant section of your dashboard for more options.",
+            'planvault-chat': "Great question about your vault items. I can help you choose the right vault box size, decide what to include, and set up delivery triggers. Let me know what you'd like to do.",
+            'plansched-chat': "I'm here to help you set up or adjust scheduled gifts. Whether it's flowers, experiences, or care packages — I can walk you through timing, pricing, and inflation-adjustment options.",
+            'vault-chat': "I'm here to help with your vault boxes. For more specific guidance on items, delivery, or pricing, you can also contact Rempla support directly.",
+            'docs-chat': "Estate document questions can be complex. For legal advice on specific documents, I'd recommend consulting your estate attorney — but I'm happy to help with how Rempla handles and organizes your documents.",
+            'protectors-chat': "Great question about your Plan Protectors. If you need help choosing the right people or understanding the responsibilities involved, Rempla support is always here.",
+            'digital-chat': "Digital legacy planning is personal. If you have a specific account type or scenario in mind, feel free to ask and I'll do my best to guide you.",
+            'settings-chat': "For account-specific questions that I can't answer here, you can reach Rempla support via the Help section or at support@rempla.com."
+        };
+
+        function chatSuggest(chatId, el, text) {
+            var input = document.getElementById(chatId + '-input');
+            input.value = text;
+            sendChat(chatId);
+        }
+
+        function sendChat(chatId) {
+            var input = document.getElementById(chatId + '-input');
+            var msgs  = document.getElementById(chatId + '-messages');
+            var text  = input.value.trim();
+            if (!text) return;
+            var userMsg = document.createElement('div');
+            userMsg.className = 'chat-msg chat-msg-user';
+            userMsg.textContent = text;
+            msgs.appendChild(userMsg);
+            input.value = '';
+            msgs.scrollTop = msgs.scrollHeight;
+            setTimeout(function() {
+            var aiMsg = document.createElement('div');
+            aiMsg.className = 'chat-msg chat-msg-ai';
+            aiMsg.textContent = chatResponses[text] || chatFallbacks[chatId] || "That's a thoughtful question. Let me help you think through the best approach for your plan.";
+            msgs.appendChild(aiMsg);
+            msgs.scrollTop = msgs.scrollHeight;
+            }, 800);
         }
 
         // Draw connectors on load, resize, and scroll of tree canvas
