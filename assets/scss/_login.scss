@@ -1,0 +1,198 @@
+// ob-header
+@use 'colors' as *;
+
+#onboarding-view {
+    min-height: 100vh;
+    background: $cream-color;
+    flex-direction: column;
+
+    .ob-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        background-color: $navy-color;
+
+        .ob-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px; font-weight: 300; letter-spacing: 0.12em;
+            color: $gold-color; cursor: pointer;
+        }
+
+        .ob-login-link {
+            font-size: 12px; letter-spacing: 0.08em; color: rgba(255,255,255,0.45);
+            cursor: pointer; transition: color 0.2s;
+        }
+        .ob-login-link:hover { color: $gold-color; }
+    }
+
+    .ob-panel {
+        width: 100%; max-width: 520px;
+        background: $navy-color;
+        border: 1px solid rgba(201,169,110,0.25);
+        box-shadow: 0 16px 56px rgba(0,0,0,0.25);
+        padding: 44px 48px;
+        animation: obPanelIn 0.35s ease;
+        display: flex;
+        justify-self: center;
+        transform: translateY(50%);
+    }
+    @keyframes obPanelIn {
+        from { opacity: 0; transform: translateY(16px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .ob-panel-eyebrow {
+        font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+        color: $gold-color; margin-bottom: 12px;
+    }
+    .ob-panel-back {
+        display: inline-flex; align-items: center; gap: 5px;
+        font-family: 'Jost', sans-serif; font-size: 11px;
+        letter-spacing: .06em; text-transform: uppercase;
+        color: rgba(255,255,255,0.3); background: none; border: none;
+        cursor: pointer; padding: 4px 0; margin-bottom: 14px;
+        transition: color 0.2s;
+    }
+    .ob-panel-back:hover { color: $gold-color; }
+    .ob-panel-back svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+    .ob-panel-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 30px; font-weight: 300; color: $white-color;
+        line-height: 1.2; margin-bottom: 30px;
+    }
+    .ob-panel-sub {
+        font-size: 13px; color: rgba(255,255,255,0.45);
+        line-height: 1.7; margin-bottom: 32px;
+    }
+
+    /* ── Form fields ── */
+    .ob-field { margin-bottom: 20px; }
+    .ob-label {
+        display: block; font-size: 11px; letter-spacing: 0.08em;
+        text-transform: uppercase; color: rgba(255,255,255,0.45);
+        margin-bottom: 8px;
+    }
+    .ob-input {
+        width: 100%; font-family: 'Jost', sans-serif;
+        font-size: 14px; color: $white-color;
+        background: rgba(255,255,255,0.07);
+        border: 1px solid rgba(255,255,255,0.14);
+        padding: 13px 16px; outline: none;
+        transition: border-color 0.2s, background 0.2s;
+    }
+    .ob-input:focus {
+        border-color: $gold-color;
+        background: rgba(201,169,110,0.07);
+    }
+    .ob-input::placeholder { color: rgba(255,255,255,0.25); }
+    .ob-input.error { border-color: $red-color; }
+
+    .ob-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    .ob-input-group { position: relative; }
+    .ob-input-group .ob-input { padding-right: 44px; }
+    .ob-input-toggle {
+        position: absolute; right: 14px; top: 50%;
+        transform: translateY(-50%);
+        background: none; border: none; cursor: pointer;
+        color: rgba(255,255,255,0.3); transition: color 0.2s;
+        padding: 4px;
+    }
+    .ob-input-toggle:hover { color: $gold-color; }
+
+    .ob-error-text {
+        font-size: 11px; color: var(--red);
+        margin-top: 6px; display: none;
+    }
+    .ob-error-text.show { display: block; }
+
+    .ob-terms {
+        display: flex; align-items: flex-start; gap: 12px;
+        margin-bottom: 28px;
+    }
+    .ob-terms input[type="checkbox"] {
+        accent-color: $gold-color; width: 15px; height: 15px;
+        flex-shrink: 0; margin-top: 2px;
+    }
+    .ob-terms-text {
+        font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.6;
+    }
+    .ob-terms-text a { color: $gold-color; cursor: pointer; }
+
+    /* ── Buttons ── */
+    .ob-btn-primary {
+        width: 100%; font-family: 'Jost', sans-serif;
+        font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+        background: $gold-color; color: $navy-deep-color;
+        border: none; padding: 16px; cursor: pointer;
+        transition: background 0.2s; margin-bottom: 14px;
+    }
+    .ob-btn-primary:hover { background: $gold-light-color; }
+    .ob-btn-secondary {
+        width: 100%; font-family: 'Jost', sans-serif;
+        font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+        background: none; color: rgba(255,255,255,0.35);
+        border: 1px solid rgba(255,255,255,0.12); padding: 14px; cursor: pointer;
+        transition: all 0.2s;
+    }
+    .ob-btn-secondary:hover {
+        border-color: rgba(255,255,255,0.28); color: rgba(255,255,255,0.6);
+    }
+
+    .ob-error-text {
+        font-size: 11px; color: $red-color;
+        margin-top: 6px; display: none;
+    }
+    .ob-error-text.show { display: block; }
+
+    .ob-terms-text {
+        font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.6;
+    }
+    .ob-terms-text a { color: $gold-color; cursor: pointer; }
+    .ob-terms-error {
+        font-size: 12px; color: $gold-light-color;
+        margin-bottom: 20px;
+
+        a {
+            color: $gold-color; text-decoration: underline;
+            cursor: pointer;
+
+            &:hover { color: $gold-color; }
+        }
+    }
+
+    /* ── Security badge ── */
+    .ob-security-badge {
+        display: flex; align-items: center; gap: 6px;
+        font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;
+        color: rgba(255,255,255,0.25); margin-top: 16px;
+        justify-content: center;
+    }
+}
+
+.mini-menu {
+    position: fixed; bottom: 0; left: 0;
+    background: rgba(26,34,53,0.9); padding: 10px 14px;
+    width: 100%; display: flex; justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000;
+    font-family: 'Jost', sans-serif; font-size: 12px; color: #c9a96e;
+
+    ul {
+        display: flex; gap: 12px;
+        width: 100%;
+        justify-content: space-around;
+
+        li {
+            list-style: none;
+
+            a {
+                color: inherit; text-decoration: none; transition: color 0.2s;
+
+                &:hover { color: $gold-light-color; }
+            }
+        }
+    }
+    a { color: inherit; text-decoration: none; transition: color 0.2s; }
+    a:hover { color: $gold-light-color; }
+}

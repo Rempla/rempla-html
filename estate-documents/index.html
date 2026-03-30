@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <ul><li><a href="index.html" class="the-logo">Rempla</a></li><li class="breadcrumb">Settings</li></ul>
+            <ul>
+                <li class="dash-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><input type="text" placeholder="Search gifts, people, docs..."></li>
+                <li><a href="#" class="dash-back"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"></path></svg> Back to Site</a></li>
+                <li class="notifications"><a href="#" class="inbox-bell"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"></path></svg></a>
+                    <div class="notif-dropdown open" id="notif-dropdown">
+                        <div class="notif-dropdown-header">
+                            <span>Notifications</span>
+                            <button onclick="clearNotifs()">Mark all read</button>
+                        </div>
+                        <div class="notif-item unread">
+                            <div class="notif-icon" style="background:rgba(201,169,110,0.1);">📦</div>
+                            <div>
+                            <div class="notif-text"><strong>Vault Box Shipped</strong> — Your medium vault box for "Grandfather's Watch" has been shipped and will arrive in 3–5 business days.</div>
+                            <div class="notif-time">2 hours ago</div>
+                            </div>
+                        </div>
+                        <div class="notif-item unread">
+                            <div class="notif-icon" style="background:rgba(80,160,80,0.1);">✓</div>
+                            <div>
+                            <div class="notif-text"><strong>Plan Protector Confirmed</strong> — Susan Harlow has accepted her role as your Plan Protector.</div>
+                            <div class="notif-time">1 day ago</div>
+                            </div>
+                        </div>
+                        <div class="notif-item">
+                            <div class="notif-icon" style="background:rgba(80,120,200,0.08);">📄</div>
+                            <div>
+                            <div class="notif-text"><strong>Document Uploaded</strong> — Durable_Power_of_Attorney.docx was successfully uploaded and categorized.</div>
+                            <div class="notif-time">3 days ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#" class="dash-avatar">M</a></li>
+            </ul>
+        </header>
+        <div class="dash-content">
+            <aside>
+                <div class="sidebar-section">
+                    <div class="sidebar-section-label">Main</div>
+                    <div class="sidebar-link" id="sl-overview" onclick="setDashLink('/dashboard/')">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg>
+                        Dashboard
+                    </div>
+                    <div class="sidebar-link" id="sl-family" onclick="setDashLink('/planning-tree/')">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"></path></svg>
+                        My Planning Tree
+                    </div>
+                    <div class="sidebar-link" id="sl-plans" onclick="setDashLink('/remembrance-plan/')">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                        My Remembrance Plan
+                    </div>
+                    <div class="sidebar-link" id="sl-vault" onclick="setDashLink('/vault-boxes/')">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="1"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+                        My Vault Boxes
+                    </div>
+                    <div class="sidebar-link active" id="sl-documents" onclick="setDashLink('/estate-documents/')">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
+                        My Estate Documents
+                    </div>
+                    <div class="sidebar-link" id="sl-digital" onclick="setDashLink('/digital-legacy/')">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path><path d="M9 9h1m4 0h1M9 12h6"></path></svg>
+                        My Digital Legacy
+                    </div>
+                    <div class="sidebar-link" id="sl-protectors" onclick="setDashLink('/plan-protectors/')">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        My Plan Protectors
+                    </div>
+                </div>
+                <div class="sidebar-section">
+                    <div class="sidebar-section-label">Account</div>
+                    <div class="sidebar-link" id="sl-settings" onclick="setDashLink('/settings/')">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"></path></svg>
+                        Settings
+                    </div>
+                </div>
+                <div class="sidebar-user">
+                    <div class="dash-avatar" style="width:32px;height:32px;font-size:12px;">M</div>
+                    <div>
+                        <div class="sidebar-user-name">Matthew</div>
+                        <div class="sidebar-user-plan">Legacy Plan</div>
+                    </div>
+                </div>
+            </aside>
+            <main class="dash-main">
+                <!-- DOCUMENTS tab -->
+                <div class="tab-panel" id="tab-documents">
+                    <div class="tab-with-sidebar">
+                        <div class="tab-main-content">
+                            <div class="planning-tree-header">
+                                <div>
+                                    <div class="section-eyebrow">My Estate Documents</div>
+                                    <div class="planning-tree-title">Upload Your Estate Documents</div>
+                                </div>
+                            </div>
+                            <p style="font-size:14px;font-weight:300;line-height:1.75;color:#5a4e3a;max-width:560px;margin-bottom:24px;">Upload your will, trust, or power of attorney. Rempla will auto-categorize each document and link identified beneficiaries to your planning tree.</p>
+                            <div style="display:flex;gap:8px;margin-bottom:20px;">
+                                <button class="doc-filter-btn active" onclick="filterDocs(this,'all')">All</button>
+                                <button class="doc-filter-btn" onclick="filterDocs(this,'will')">Will</button>
+                                <button class="doc-filter-btn" onclick="filterDocs(this,'trust')">Trust</button>
+                                <button class="doc-filter-btn" onclick="filterDocs(this,'poa')">POA</button>
+                            </div>
+                            <!-- Dropzone -->
+                            <div id="doc-dropzone" style="border:2px dashed #d4c4ae;padding:36px;text-align:center;margin-bottom:24px;background:white;transition:border-color .2s,background .2s;cursor:pointer;" onclick="document.getElementById('doc-upload-input').click()" ondragover="event.preventDefault();this.style.borderColor='#c9a96e';this.style.background='rgba(201,169,110,0.04)'" ondragleave="this.style.borderColor='#d4c4ae';this.style.background='white'" ondrop="handleDocDrop(event)">
+                                <input type="file" id="doc-upload-input" style="display:none" multiple="" accept=".pdf,.doc,.docx" onchange="handleDocUpload(event)">
+                                <div style="font-size:24px;margin-bottom:12px;opacity:.5;">📄</div>
+                                <div style="font-size:14px;font-weight:400;color:#5a4e3a;margin-bottom:6px;">Drop files here or click to upload</div>
+                                <div style="font-size:12px;color:#9a8c78;">PDF, DOC, DOCX supported · Up to 25MB per file</div>
+                            </div>
+                    
+                            <div id="doc-list" style="display:flex;flex-direction:column;gap:12px;">
+                                <div class="doc-row" id="doc-row-1">
+                                    <div class="doc-icon">
+                                        <div class="doc-icon-bg doc-icon-pdf">PDF</div>
+                                    </div>
+                                    <div style="flex:1;min-width:0;">
+                                        <div class="doc-name">Revocable_Living_Trust_2024.pdf</div>
+                                        <div class="doc-meta"><span>1.2 MB</span><span>Uploaded Jan 14, 2025</span></div>
+                                    </div>
+                                    <div class="doc-category-tag doc-tag-trust">Trust</div>
+                                    <div class="doc-actions">
+                                        <button class="doc-action-btn" title="Download" onclick="downloadDoc(1)"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></button>
+                                        <button class="doc-action-btn" title="Delete" onclick="deleteDoc(1)"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"></path><path d="M10 11v6M14 11v6"></path><path d="M9 6V4h6v2"></path></svg></button>
+                                    </div>
+                                </div>
+                                <div class="doc-row" id="doc-row-2">
+                                    <div class="doc-icon">
+                                        <div class="doc-icon-bg doc-icon-pdf">PDF</div>
+                                    </div>
+                                    <div style="flex:1;min-width:0;">
+                                        <div class="doc-name">Last_Will_and_Testament.pdf</div>
+                                        <div class="doc-meta"><span>840 KB</span><span>Uploaded Mar 3, 2025</span></div>
+                                    </div>
+                                    <div class="doc-category-tag doc-tag-will">Will &amp; Testament</div>
+                                    <div class="doc-actions">
+                                        <button class="doc-action-btn" title="Download" onclick="downloadDoc(2)"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></button>
+                                        <button class="doc-action-btn" title="Delete" onclick="deleteDoc(2)"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"></path><path d="M10 11v6M14 11v6"></path><path d="M9 6V4h6v2"></path></svg></button>
+                                    </div>
+                                </div>
+                                <div class="doc-row" id="doc-row-3">
+                                    <div class="doc-icon">
+                                        <div class="doc-icon-bg doc-icon-doc">DOC</div>
+                                    </div>
+                                    <div style="flex:1;min-width:0;">
+                                        <div class="doc-name">Durable_Power_of_Attorney.docx</div>
+                                        <div class="doc-meta"><span>210 KB</span><span>Uploaded Mar 3, 2025</span></div>
+                                    </div>
+                                    <div class="doc-category-tag doc-tag-poa">Power of Attorney</div>
+                                    <div class="doc-actions">
+                                        <button class="doc-action-btn" title="Download" onclick="downloadDoc(3)"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></button>
+                                        <button class="doc-action-btn" title="Delete" onclick="deleteDoc(3)"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"></path><path d="M10 11v6M14 11v6"></path><path d="M9 6V4h6v2"></path></svg></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="doc-upload-toast" style="display:none;position:fixed;bottom:32px;right:32px;background:#111827;color:white;padding:16px 24px;font-size:13px;box-shadow:0 8px 32px rgba(0,0,0,0.3);z-index:200;align-items:center;gap:12px;">
+                                <svg style="width:16px;height:16px;stroke:#c9a96e;fill:none;stroke-width:2;flex-shrink:0" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                <span id="doc-toast-msg">Uploading…</span>
+                            </div>
+                        </div>
+                        <div class="tab-sidebar-chat">
+                            <div class="rempla-chat">
+                            <div class="chat-header">
+                                <div class="chat-ai-avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M6 20v-2a6 6 0 0112 0v2"></path></svg></div>
+                                <div class="chat-header-title"><div class="chat-header-name">Rempla</div><div class="chat-header-status">AI Planning Guide · Online</div></div><div class="chat-typing-dots"><span></span><span></span><span></span></div>
+                            </div>
+                            <div class="chat-messages" id="docs-chat-messages">
+                                <div class="chat-msg chat-msg-ai">You have <strong>3 estate documents</strong> uploaded — your Living Trust, Will, and Power of Attorney. That's a strong foundation.</div>
+                                <div class="chat-msg chat-msg-ai">A few things to consider:<br>• A <strong>Healthcare Directive</strong> is not yet uploaded<br>• Rempla can scan your trust to identify beneficiaries and link them to your planning tree automatically</div>
+                                <div class="chat-suggestion" onclick="chatSuggest('docs-chat',this,'What is a Healthcare Directive?')">✦ What is a Healthcare Directive?</div>
+                                <div class="chat-suggestion" onclick="chatSuggest('docs-chat',this,'Scan my trust for beneficiaries')">✦ Scan my trust for beneficiaries</div>
+                                <div class="chat-suggestion" onclick="chatSuggest('docs-chat',this,'What other documents should I upload?')">✦ What other documents should I upload?</div>
+                            </div>
+                            <div class="chat-input-area">
+                                <input class="chat-input" id="docs-chat-input" placeholder="Ask Rempla about your estate documents…" type="text" onkeydown="if(event.key==='Enter')sendChat('docs-chat')">
+                                <button class="chat-send" onclick="sendChat('docs-chat')">
+                                <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script>
+        function setDashLink(link) {
+            var linkDash = link;
+            window.location.href = linkDash;
+        }
+        // ── Documents ──
+        var CATEGORY_LABELS = { will: 'Will & Testament', trust: 'Trust', poa: 'Power of Attorney', other: 'Other' };
+        var CATEGORY_TAGS   = { will: 'doc-tag-will', trust: 'doc-tag-trust', poa: 'doc-tag-poa', other: 'doc-tag-other' };
+        var docs = [
+            { id: 1, name: 'Revocable_Living_Trust_2024.pdf', category: 'trust', size: '1.2 MB', date: 'Jan 14, 2025', ext: 'PDF' },
+            { id: 2, name: 'Last_Will_and_Testament.pdf',     category: 'will',  size: '840 KB', date: 'Mar 3, 2025',  ext: 'PDF' },
+            { id: 3, name: 'Durable_Power_of_Attorney.docx',  category: 'poa',   size: '210 KB', date: 'Mar 3, 2025',  ext: 'DOC' }
+        ];
+        var activeFilter = 'all';
+
+        function renderDocs() {
+            var list = document.getElementById('doc-list');
+            if (!list) return;
+            var filtered = activeFilter === 'all' ? docs : docs.filter(function(d){ return d.category === activeFilter; });
+            if (filtered.length === 0) {
+                list.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-light);font-size:14px;">No documents in this category yet.</div>';
+                return;
+            }
+            list.innerHTML = filtered.map(function(doc) {
+                var tagClass = CATEGORY_TAGS[doc.category];
+                var label = CATEGORY_LABELS[doc.category];
+                var iconClass = doc.ext === 'PDF' ? 'doc-icon-pdf' : doc.ext === 'DOC' ? 'doc-icon-doc' : 'doc-icon-other';
+                var progressBar = doc.uploading ? '<div class="doc-upload-bar"><div class="doc-upload-fill" id="fill-' + doc.id + '" style="width:' + (doc.progress||0) + '%"></div></div>' : '';
+                return '<div class="doc-row" id="doc-row-' + doc.id + '">' +
+                    '<div class="doc-icon"><div class="doc-icon-bg ' + iconClass + '">' + doc.ext + '</div></div>' +
+                    '<div style="flex:1;min-width:0;"><div class="doc-name">' + doc.name + '</div>' +
+                    '<div class="doc-meta"><span>' + doc.size + '</span><span>Uploaded ' + doc.date + '</span></div>' + progressBar + '</div>' +
+                    '<div class="doc-category-tag ' + tagClass + '">' + label + '</div>' +
+                    '<div class="doc-actions">' +
+                    '<button class="doc-action-btn" title="Download" onclick="downloadDoc(' + doc.id + ')"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>' +
+                    '<button class="doc-action-btn" title="Delete" onclick="deleteDoc(' + doc.id + ')"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg></button>' +
+                    '</div></div>';
+            }).join('');
+        }
+
+        function downloadDoc(id) { var doc = docs.find(function(d){ return d.id === id; }); if (doc) alert('Downloading: ' + doc.name); }
+
+        function filterDocs(btn, cat) {
+            document.querySelectorAll('.doc-filter-btn').forEach(function(b){ b.classList.remove('active'); });
+            btn.classList.add('active');
+            activeFilter = cat;
+            renderDocs();
+        }
+
+        function deleteDoc(id) {
+            var row = document.getElementById('doc-row-' + id);
+            if (row) { row.style.opacity = '0'; row.style.transition = 'opacity .3s'; }
+            setTimeout(function() { docs = docs.filter(function(d){ return d.id !== id; }); renderDocs(); }, 300);
+        }
+
+        function showToast(msg) {
+            var t = document.getElementById('doc-upload-toast');
+            document.getElementById('doc-toast-msg').textContent = msg;
+            t.style.display = 'flex';
+            setTimeout(function(){ t.style.display = 'none'; }, 3000);
+        }
+
+        function guessCategory(name) {
+            var n = name.toLowerCase();
+            if (n.includes('trust')) return 'trust';
+            if (n.includes('will') || n.includes('testament')) return 'will';
+            if (n.includes('power') || n.includes('attorney') || n.includes('poa')) return 'poa';
+            return 'other';
+        }
+
+        function handleDocUpload(event) { processFiles(Array.from(event.target.files)); event.target.value = ''; }
+        function handleDocDrop(event) {
+            event.preventDefault();
+            document.getElementById('doc-dropzone').style.borderColor = '#d4c4ae';
+            document.getElementById('doc-dropzone').style.background = '#ffffff';
+            processFiles(Array.from(event.dataTransfer.files));
+        }
+
+        function processFiles(files) {
+            files.forEach(function(file) {
+                var ext = file.name.split('.').pop().toUpperCase();
+                var displayExt = ext === 'DOCX' ? 'DOC' : ext;
+                var id = Date.now() + Math.random();
+                var sizeMB = file.size / (1024*1024);
+                var sizeStr = sizeMB >= 1 ? sizeMB.toFixed(1) + ' MB' : Math.round(file.size/1024) + ' KB';
+                var now = new Date().toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
+                var doc = { id: id, name: file.name, category: guessCategory(file.name), size: sizeStr, date: now, ext: displayExt, uploading: true, progress: 0 };
+                docs.unshift(doc);
+                activeFilter = 'all';
+                document.querySelectorAll('.doc-filter-btn').forEach(function(b,i){ b.classList.toggle('active', i===0); });
+                renderDocs();
+                var p = 0;
+                var interval = setInterval(function() {
+                    p += Math.random() * 25 + 10;
+                    if (p >= 100) { p = 100; clearInterval(interval); }
+                    var fill = document.getElementById('fill-' + id);
+                    if (fill) fill.style.width = p + '%';
+                        if (p >= 100) {
+                    setTimeout(function() { doc.uploading = false; renderDocs(); showToast(file.name + ' uploaded successfully.'); }, 400);
+                    }
+                }, 300);
+            });
+        }
+
+        renderDocs();
+    </script>
+</body>
+</html>
