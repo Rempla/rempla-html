@@ -1162,6 +1162,13 @@
     }
 }
 
+.buttons-area {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    margin-top: 24px;
+}
+
 .tab-with-sidebar {
     display: grid;
     grid-template-columns: 1fr 340px;

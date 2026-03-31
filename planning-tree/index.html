@@ -96,14 +96,20 @@
             <main class="dash-main">
                 <div class="tab-panel active" id="tab-family">
                     <div class="planning-tree-header">
-                    <div>
-                        <div class="section-eyebrow">My Planning Tree</div>
-                        <div class="planning-tree-title">Grow Your Planning Tree</div>
-                    </div>
-                    <button class="btn-add-member" onclick="openAddMemberModal()">
-                        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                        Add Member
-                    </button>
+                        <div>
+                            <div class="section-eyebrow">My Planning Tree</div>
+                            <div class="planning-tree-title">Grow Your Planning Tree</div>
+                        </div>
+                        <div class="buttons-area">
+                            <button class="btn-add-member" onclick="openAddMemberModal()">
+                                <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                Add Member
+                            </button>
+                            <button class="btn-add-member" onclick="setDashLink('/remembrance-plan/')">
+                                <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                Add Gift
+                            </button>
+                        </div>
                     </div>
 
                     <!-- Legend -->
@@ -506,6 +512,9 @@
                 </div>
             </div>
 
+            <div class="modal-spacer"></div>
+
+            <div class="modal-section-title">Address Information</div>
             <div class="modal-row">
                 <div class="modal-field">
                     <label class="modal-label">Address *</label>
@@ -591,6 +600,9 @@
                 </div>
             </div>
 
+            <div class="modal-spacer"></div>
+
+            <div class="modal-section-title">Family Connection</div>
             <div class="modal-row">
                 <div class="modal-field">
                     <label class="modal-label">Relationship *</label>
@@ -628,7 +640,7 @@
                 </div>
             </div>
 
-            <div class="modal-divider"></div>
+            <div class="modal-spacer"></div>
 
             <!-- PLANNING -->
             <div class="modal-section-title">Planning Links</div>
@@ -651,7 +663,7 @@
                 <textarea class="modal-input" id="member-notes" rows="2" placeholder="Any special context Rempla should know about this person…" style="resize:vertical;"></textarea>
             </div>
 
-            <div class="modal-divider"></div>
+            <div class="modal-spacer"></div>
 
             <!-- IMPORTANT DATES -->
             <div class="modal-section-title">Important Dates</div>
@@ -726,6 +738,9 @@
                 </div>
             </div>
 
+            <div class="modal-spacer"></div>
+
+            <div class="modal-section-title">Address Information</div>
             <div class="modal-row">
                 <div class="modal-field">
                     <label class="modal-label">Address *</label>
@@ -811,6 +826,9 @@
                 </div>
             </div>
 
+            <div class="modal-spacer"></div>
+
+            <div class="modal-section-title">Family Connection</div>
             <div class="modal-row">
                 <div class="modal-field">
                     <label class="modal-label">Relationship *</label>
@@ -848,7 +866,7 @@
                 </div>
             </div>
 
-            <div class="modal-divider"></div>
+            <div class="modal-spacer"></div>
 
             </div><!-- /modal-body -->
 

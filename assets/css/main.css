@@ -358,7 +358,6 @@ a {
   justify-content: center;
   padding: 24px;
 }
-
 .modal-overlay.open {
   display: flex;
 }
@@ -371,6 +370,10 @@ a {
   overflow-y: auto;
   box-shadow: 0 32px 80px rgba(0, 0, 0, 0.4);
   animation: modalIn 0.25s ease;
+}
+
+.modal-spacer {
+  height: 20px;
 }
 
 @keyframes modalIn {
@@ -417,8 +420,7 @@ a {
   transition: color 0.2s;
   padding: 4px;
 }
-
-.modal-close:hover {
+.modal-close*:hover {
   color: #c9a96e;
 }
 
@@ -460,11 +462,9 @@ a {
   outline: none;
   transition: border-color 0.2s;
 }
-
 .modal-input:focus {
   border-color: #c9a96e;
 }
-
 .modal-input::placeholder {
   color: #9a8c78;
 }
@@ -485,7 +485,6 @@ a {
   background-position: right 14px center;
   transition: border-color 0.2s;
 }
-
 .modal-select:focus {
   border-color: #c9a96e;
 }
@@ -515,11 +514,9 @@ a {
   border: 1px solid #ede5d8;
   transition: border-color 0.2s;
 }
-
 .modal-checkbox-label:hover {
   border-color: #c9a96e;
 }
-
 .modal-checkbox-label input {
   accent-color: #a07840;
   width: 14px;
@@ -542,7 +539,6 @@ a {
   border: 1px solid #ede5d8;
   padding: 12px 14px;
 }
-
 .important-date-row input[type=text] {
   flex: 1.2;
   font-family: "Jost", sans-serif;
@@ -554,11 +550,9 @@ a {
   outline: none;
   transition: border-color 0.2s;
 }
-
 .important-date-row input[type=text]:focus {
   border-color: #c9a96e;
 }
-
 .important-date-row input[type=date] {
   flex: 1;
   font-family: "Jost", sans-serif;
@@ -571,7 +565,6 @@ a {
   cursor: pointer;
   transition: border-color 0.2s;
 }
-
 .important-date-row input[type=date]:focus {
   border-color: #c9a96e;
 }
@@ -587,7 +580,6 @@ a {
   transition: color 0.2s;
   flex-shrink: 0;
 }
-
 .date-remove-btn:hover {
   color: #b03030;
 }
@@ -609,7 +601,6 @@ a {
   width: 100%;
   justify-content: center;
 }
-
 .btn-add-date:hover {
   border-color: #c9a96e;
   color: #a07840;
@@ -633,7 +624,6 @@ a {
   cursor: pointer;
   transition: all 0.15s;
 }
-
 .date-suggestion-chip:hover {
   border-color: #c9a96e;
   color: #a07840;
@@ -669,7 +659,6 @@ a {
   cursor: pointer;
   transition: all 0.2s;
 }
-
 .btn-modal-cancel:hover {
   border-color: #d4c4ae;
   color: #2a2015;
@@ -687,7 +676,6 @@ a {
   cursor: pointer;
   transition: background 0.2s;
 }
-
 .btn-modal-save:hover {
   background: #e8d5b0;
 }
