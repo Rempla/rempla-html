@@ -892,20 +892,22 @@ a {
   padding-left: 12px;
 }
 .container aside .sidebar-section .sidebar-link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 12px;
+  margin-bottom: 2px;
+}
+.container aside .sidebar-section .sidebar-link a {
   font-size: 13px;
   font-weight: 400;
   color: #5a4e3a;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
   border-radius: 2px;
   transition: background 0.15s, color 0.15s;
   text-decoration: none;
-  margin-bottom: 2px;
 }
-.container aside .sidebar-section .sidebar-link svg {
+.container aside .sidebar-section .sidebar-link a svg {
   width: 16px;
   height: 16px;
   stroke: currentColor;
@@ -913,7 +915,7 @@ a {
   stroke-width: 1.5;
   flex-shrink: 0;
 }
-.container aside .sidebar-section .sidebar-link.active, .container aside .sidebar-section .sidebar-link:hover {
+.container aside .sidebar-section .sidebar-link a.active, .container aside .sidebar-section .sidebar-link a:hover {
   background: #f7f3ec;
   color: #a07840;
 }
