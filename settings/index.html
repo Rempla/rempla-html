@@ -49,40 +49,56 @@
             <aside>
                 <div class="sidebar-section">
                     <div class="sidebar-section-label">Main</div>
-                    <div class="sidebar-link" id="sl-overview" onclick="setDashLink('/dashboard/')">
-                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg>
-                        Dashboard
+                    <div class="sidebar-link" id="sl-overview">
+                        <a href="/dashboard/">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg>
+                            Dashboard
+                        </a>
                     </div>
-                    <div class="sidebar-link" id="sl-family" onclick="setDashLink('/planning-tree/')">
-                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"></path></svg>
-                        My Planning Tree
+                    <div class="sidebar-link" id="sl-family">
+                        <a href="/planning-tree/">
+                            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"></path></svg>
+                            My Planning Tree
+                        </a>
                     </div>
-                    <div class="sidebar-link" id="sl-plans" onclick="setDashLink('/remembrance-plan/')">
-                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-                        My Remembrance Plan
+                    <div class="sidebar-link" id="sl-plans">
+                        <a href="/remembrance-plan/">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                            My Remembrance Plan
+                        </a>
                     </div>
-                    <div class="sidebar-link" id="sl-vault" onclick="setDashLink('/vault-boxes/')">
-                        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="1"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
-                        My Vault Boxes
+                    <div class="sidebar-link" id="sl-vault">
+                        <a href="/vault-boxes/">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="1"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+                            My Vault Boxes
+                        </a>
                     </div>
-                    <div class="sidebar-link" id="sl-documents" onclick="setDashLink('/estate-documents/')">
-                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
-                        My Estate Documents
+                    <div class="sidebar-link" id="sl-documents">
+                        <a href="/estate-documents/">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
+                            My Estate Documents
+                        </a>
                     </div>
-                    <div class="sidebar-link" id="sl-digital" onclick="setDashLink('/digital-legacy/')">
-                        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path><path d="M9 9h1m4 0h1M9 12h6"></path></svg>
-                        My Digital Legacy
+                    <div class="sidebar-link" id="sl-digital">
+                        <a href="/digital-legacy/">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path><path d="M9 9h1m4 0h1M9 12h6"></path></svg>
+                            My Digital Legacy
+                        </a>
                     </div>
-                    <div class="sidebar-link" id="sl-protectors" onclick="setDashLink('/plan-protectors/')">
-                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        My Plan Protectors
+                    <div class="sidebar-link" id="sl-protectors">
+                        <a href="/plan-protectors/">
+                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            My Plan Protectors
+                        </a>
                     </div>
                 </div>
                 <div class="sidebar-section">
                     <div class="sidebar-section-label">Account</div>
-                    <div class="sidebar-link active" id="sl-settings" onclick="setDashLink('/settings/')">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"></path></svg>
-                        Settings
+                    <div class="sidebar-link" id="sl-settings">
+                        <a href="/settings/" class="active">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"></path></svg>
+                            Settings
+                        </a>
                     </div>
                 </div>
                 <div class="sidebar-user">
@@ -111,49 +127,49 @@
                                         <div>
                                             <div class="settings-label">First Name</div>
                                         </div>
-                                        <input class="settings-input" value="Matthew" type="text">
+                                        <input class="settings-input" value="Matthew" type="text" placeholder="e.g. Margaret">
                                     </div>
 
                                     <div class="settings-row">
                                         <div>
                                             <div class="settings-label">Last Name</div>
                                         </div>
-                                        <input class="settings-input" value="Thompson" type="text">
+                                        <input class="settings-input" value="Thompson" type="text" placeholder="e.g. Johnson">
                                     </div>
 
                                     <div class="settings-row">
                                         <div>
                                             <div class="settings-label">Email</div>
                                         </div>
-                                        <input class="settings-input" value="matt@example.com" type="email">
+                                        <input class="settings-input" value="matt@example.com" type="email" placeholder="e.g. matt@example.com">
                                     </div>
                                     
                                     <div class="settings-row">
                                         <div>
                                             <div class="settings-label">Phone</div>
                                         </div>
-                                        <input class="settings-input" value="+1 (555) 123-4567" type="tel">
+                                        <input class="settings-input" value="+1 (555) 123-4567" type="tel" placeholder="e.g. +1 (555) 123-4567">
                                     </div>
 
                                     <div class="settings-row">
                                         <div>
                                             <div class="settings-label">Address</div>
                                         </div>
-                                        <input class="settings-input" value="123 Main St" type="text">
+                                        <input class="settings-input" value="123 Main St" type="text" placeholder="e.g. 123 Main St">
                                     </div>
 
                                     <div class="settings-row">
                                         <div>
                                             <div class="settings-label">Address Line 2</div>
                                         </div>
-                                        <input class="settings-input" value="" type="text">
+                                        <input class="settings-input" value="" type="text" placeholder="e.g. Apt 1">
                                     </div>
 
                                     <div class="settings-row">
                                         <div>
                                             <div class="settings-label">City</div>
                                         </div>
-                                        <input class="settings-input" value="Anycity" type="text">
+                                        <input class="settings-input" value="Anycity" type="text" placeholder="e.g. Anycity">
                                     </div>
 
                                     <div class="settings-row">
@@ -220,7 +236,7 @@
                                         <div>
                                             <div class="settings-label">ZIP Code</div>
                                         </div>
-                                        <input class="settings-input" value="12345" type="text">
+                                        <input class="settings-input" value="12345" type="text" placeholder="e.g. 12345">
                                     </div>
 
                                     <div class="settings-row">
@@ -229,7 +245,12 @@
                                         </div>
                                         <input class="settings-input" type="date" id="member-dob">
                                     </div>
+
+                                    <div class="settings-save-bar">
+                                        <button class="btn-settings-save" onclick="openProfileModal()">Edit information</button>
+                                    </div>
                                 </div>
+
                                 <div class="settings-section">
                                     <div class="settings-section-title">Notifications</div>
                                     <div class="settings-row">
@@ -296,10 +317,257 @@
             </main>
         </div>
     </div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!--               EDIT PERSONAL INFO MODAL              -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div class="modal-overlay" id="edit-profile-modal" onclick="handleModalOverlayClick(event)">
+        <div class="modal-box" onclick="event.stopPropagation()">
+
+            <div class="modal-header">
+            <div>
+                <div class="modal-header-title">Edit Personal Information</div>
+                <div class="modal-header-sub">Update this person's details</div>
+            </div>
+            <button class="modal-close" onclick="closeEditProfileModal()">×</button>
+            </div>
+
+            <div class="modal-body">
+
+            <!-- PERSONAL INFO -->
+            <div class="modal-section-title">Personal Information</div>
+            <div class="modal-row">
+                <div class="modal-field">
+                    <label class="modal-label">First Name *</label>
+                    <input class="modal-input" type="text" id="edit-first-name" placeholder="e.g. Margaret">
+                </div>
+                <div class="modal-field">
+                    <label class="modal-label">Last Name *</label>
+                    <input class="modal-input" type="text" id="edit-last-name" placeholder="e.g. Thompson">
+                </div>
+            </div>
+
+            <div class="modal-row">
+                <div class="modal-field">
+                    <label class="modal-label">Email *<span style="color:#9a8c78;font-weight:300;">(for gift notifications)</span></label>
+                    <input class="modal-input" type="email" id="edit-email" placeholder="e.g. margaret@example.com">
+                </div>
+                <div class="modal-field">
+                    <label class="modal-label">Phone *</label>
+                    <input class="modal-input" type="text" id="edit-phone" placeholder="e.g. 555-1234">
+                </div>
+            </div>
+
+            <div class="modal-row">
+                <div class="modal-field">
+                    <label class="modal-label">Date of Birth</label>
+                    <input class="modal-input" type="date" id="edit-dob">
+                </div>
+            </div>
+
+            <div class="modal-spacer"></div>
+
+            <div class="modal-section-title">Address Information</div>
+            <div class="modal-row">
+                <div class="modal-field">
+                    <label class="modal-label">Address *</label>
+                    <input class="modal-input" type="text" id="edit-address" placeholder="e.g. 123 Main St">
+                </div>
+
+                <div class="modal-field">
+                    <label class="modal-label">Address Line 2</label>
+                    <input class="modal-input" type="text" id="edit-address-line2" placeholder="e.g. Apt 4B">
+                </div>
+            </div>
+
+            <div class="modal-row">
+                <div class="modal-field">
+                    <label class="modal-label">City *</label>
+                    <input class="modal-input" type="text" id="edit-city" placeholder="e.g. Anytown">
+                </div>
+
+                <div class="modal-field">
+                    <label class="modal-label">State *</label>
+                    <select class="modal-input" name="edit-state" id="edit-state">
+                        <option value="">Select a state</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DC">District of Columbia</option>
+                        <option value="DE">Delaware</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                        <!-- Add more states as needed -->
+                    </select>
+                </div>
+            </div>
+
+            <div class="modal-row">
+                <div class="modal-field">
+                    <label class="modal-label">ZIP Code *</label>
+                    <input class="modal-input" type="text" id="edit-zip" placeholder="e.g. 12345">
+                </div>
+            </div>
+
+            <div class="modal-spacer"></div>
+
+            </div><!-- /modal-body -->
+
+            <div class="modal-footer">
+                <button class="btn-modal-cancel" onclick="closeEditProfileModal()">Cancel</button>
+                <button class="btn-modal-save" onclick="saveEditProfile()">Save Changes</button>
+            </div>
+
+        </div>
+    </div>
     <script>
-        function setDashLink(link) {
-            var linkDash = link;
-            window.location.href = linkDash;
+        // ── Edit Profile Modal ──
+        function openProfileModal() {
+            document.getElementById('edit-profile-modal').classList.add('open');
+            document.body.style.overflow = 'hidden';
+
+            
+            let profileInfo = [];
+            document.querySelectorAll('.settings-input').forEach(input => {
+                profileInfo.push(input.value);
+            });
+
+            document.getElementById('edit-first-name').value = profileInfo[0];
+            document.getElementById('edit-last-name').value = profileInfo[1];
+            document.getElementById('edit-email').value = profileInfo[2];
+            document.getElementById('edit-phone').value = profileInfo[3];
+            document.getElementById('edit-address').value = profileInfo[4];
+            document.getElementById('edit-address-line2').value = profileInfo[5];
+            document.getElementById('edit-city').value = profileInfo[6];
+            document.getElementById('edit-state').value = profileInfo[7];
+            document.getElementById('edit-zip').value = profileInfo[8];
+            document.getElementById('edit-dob').value = profileInfo[9];
+        }
+
+        function closeEditProfileModal() {
+            document.getElementById('edit-profile-modal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function handleModalOverlayClick(e) {
+            if (e.target === document.getElementById('edit-profile-modal')) closeEditProfileModal();
+        }
+
+        function validateEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+
+        // Basic international format with optional country code
+        function validatePhone(phone) {
+            const phoneRegex = /^[0-9\s\-().+]+$/;
+            return phoneRegex.test(phone);
+        }
+
+        function saveEditProfile() {
+            var firstName = document.getElementById('edit-first-name').value.trim();
+            var lastName = document.getElementById('edit-last-name').value.trim();
+            var emailaddress = document.getElementById('edit-email').value.trim();
+            var phone = document.getElementById('edit-phone').value.trim();
+            var address = document.getElementById('edit-address').value.trim();
+            var addressLine2 = document.getElementById('edit-address-line2').value.trim();
+            var city = document.getElementById('edit-city').value.trim();
+            var state = document.getElementById('edit-state').value.trim();
+            var zip = document.getElementById('edit-zip').value.trim();
+
+            var valid = true;
+            // Reset borders
+            ['edit-first-name','edit-last-name','edit-email','edit-phone','edit-address','edit-address-line2','edit-city','edit-state','edit-zip'].forEach(function(id) {
+                document.getElementById(id).style.borderColor = '';
+            });
+
+            if (!firstName) { document.getElementById('edit-first-name').style.borderColor = '#b03030'; valid = false; }
+            if (!lastName) { document.getElementById('edit-last-name').style.borderColor = '#b03030'; valid = false; }
+            if (!validateEmail(emailaddress)) { document.getElementById('edit-email').style.borderColor = '#b03030'; valid = false; }
+            if (!validatePhone(phone)) { document.getElementById('edit-phone').style.borderColor = '#b03030'; valid = false; }
+            if (!address) { document.getElementById('edit-address').style.borderColor = '#b03030'; valid = false; }
+            if (!city) { document.getElementById('edit-city').style.borderColor = '#b03030'; valid = false; }
+            if (!state) { document.getElementById('edit-state').style.borderColor = '#b03030'; valid = false; }
+            if (!zip) { document.getElementById('edit-zip').style.borderColor = '#b03030'; valid = false; }
+            if (!valid) {
+            if (!firstName) document.getElementById('edit-first-name').focus();
+            else if (!lastName) document.getElementById('edit-last-name').focus();
+            else if (!validatePhone(phone)) document.getElementById('edit-phone').focus();
+            else if (!address) document.getElementById('edit-address').focus();
+            else if (!city) document.getElementById('edit-city').focus();
+            else if (!state) document.getElementById('edit-state').focus();
+            else if (!zip) document.getElementById('edit-zip').focus();
+            else document.getElementById('edit-email').focus();
+            return;
+            }
+
+            // Show success toast and close
+            closeEditProfileModal();
+
+            // Reset form
+            document.getElementById('edit-first-name').value = '';
+            document.getElementById('edit-last-name').value = '';
+            document.getElementById('edit-phone').value = '';
+            document.getElementById('edit-address').value = '';
+            document.getElementById('edit-address-line2').value = '';
+            document.getElementById('edit-city').value = '';
+            document.getElementById('edit-state').value = '';
+            document.getElementById('edit-zip').value = '';
+            document.getElementById('edit-dob').value = '';
+            document.getElementById('edit-email').value = '';
+            ['edit-first-name','edit-last-name','edit-email','edit-phone','edit-address','edit-address-line2','edit-city','edit-state','edit-zip'].forEach(function(id) {
+                document.getElementById(id).style.borderColor = '';
+            });
+
+            // Show confirmation toast
+            // var toast = document.getElementById('doc-upload-toast');
+            // document.getElementById('doc-toast-msg').textContent = firstName + ' information has been updated.';
+            // toast.style.display = 'flex';
+            // setTimeout(function() { toast.style.display = 'none'; }, 3500);
         }
     </script>
 </body>
